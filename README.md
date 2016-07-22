@@ -1,0 +1,2 @@
+# cwsVideoPicker
+Umbraco Video Picker
