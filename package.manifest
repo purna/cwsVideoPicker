@@ -1,0 +1,55 @@
+﻿{
+    propertyEditors: [
+		{
+		    /*this must be a unique alias*/
+			alias: "cwsVideoPicker",
+			/*the name*/
+		    name: "CWS Video Picker",
+			/*the html file we will load for the editor*/
+		    valueType: "JSON",
+		    editor: {
+		        view: "~/App_Plugins/cwsVideoPicker/picker.html",
+		    hideLabel: true
+      },
+      prevalues: {
+          fields: [
+          {
+              label: "Enable Preview",
+              description: "Show video.",
+              key: "cbEnablePreview",
+               view: "boolean"
+          },
+          {
+              label: "Preview Height",
+              description: "Enter a valid number. Default height is '240'",
+              key: "txtYouTubeHeight",
+              view: "textstring"
+          },
+          {
+              label: "Preview Width",
+              description: "Enter a valid number. Default width is '320'",
+              key: "txtYouTubeWidth",
+              view: "textstring"
+          }
+        ]
+   },
+   
+	
+	// Default settings
+   defaultConfig: {
+                cbEnablePreview: "1",
+		txtYouTubeHeight: "240",
+		txtYouTubeWidth: "320"
+         }
+   }],
+
+
+	 //array of files we want to inject into the application on app_start
+    javascript: [
+		"~/App_Plugins/cwsVideoPicker/picker.controller.js"
+    ],
+	 //array of files we want to inject into the application on app_start
+    css: [
+		"~/App_Plugins/cwsVideoPicker/picker.css"
+    ]	
+}
